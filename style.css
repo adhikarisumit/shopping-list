@@ -1,0 +1,93 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+
+}
+
+header {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin: 10px;
+}
+
+.item-form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.btn {
+    width: 100px;
+    margin-left: 12px;
+    margin-top: 10px;
+    padding: 9px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+
+}
+.item-input{
+     border: 1px solid rgb(219, 208, 208);
+     border-radius: 5px;
+}
+.filter-input{
+margin-top: 10px;
+border: none;
+border-bottom: 1px solid rgb(228, 228, 197);
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 10px;
+    margin-left: 12px;
+    gap: 10px;
+}
+.grid li{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    border: 1px solid rgb(176, 171, 171);
+    border-radius: 5px;
+    padding: 9px;
+}
+.grid button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: red;;
+}
+.btn-clear{
+    margin-top: 10px;
+    margin-left: 12px;
+    padding: 9px;
+    width: 100%;
+    background: white;
+    font-size: 16px;
+    border: 1px solid rgb(176, 171, 171);
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+/* -------------------------------------------- */
+/* logical classes */
+.input {
+    margin-left: 12px;
+    padding: 10px;
+    outline: none;
+    width: 100%;
+   
+}
