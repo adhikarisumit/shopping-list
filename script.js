@@ -1,92 +1,40 @@
-// alert("hello world")
-const addbtn = document.getElementById("addbtn")
-const itemForm = document.getElementById("item-form")
-const inputForm = document.getElementById("input-form")
-const itemlist = document.getElementById("item-list")
-const value = document.getElementById('value')
-const clearAll = document.getElementById('clear-all')
-// console.log(addbtn)
-// console.log(`this is html before function ${inputForm.value}`)
-function addItem(e) {
+const itemForm=document.getElementById('item-form');
+const inputitem = document.getElementById('item-input');
+const addBtn = document.getElementById('item_add_btn');
+const filter = document.getElementById('filter');
+const itemList = document.getElementById('itemlist');
+const clear = document.getElementById('clear');
+
+function addbtn(e) {
     e.preventDefault();
-    // console.log(`function ${inputForm.value}`)
-    const inputValue = inputForm.value;
-    if (inputValue === '') {
-        alert("Please add the item")
-        return
+    const inputValue = inputitem.ariaValueMax.trim();//input value liyo
+    if (inputitem === "") {
+        alert("please Enter atleast one item")
+        return;
     }
-    // let div = document.createElement("div")
-    // div.id = "value"
-    // // console.log(div)
+    const li = document.createElement('li')//li create garyo
+    const text = document.createTextNode(inputValue);//li vitra ko lagi text 
+    const btn = createButton('btn-list');//li vitra ko button(function)
 
-    // div.textContent = inputValue
-    // console.log(div)
-    // div.appendChild(div)
-    // console.log("click")
-
-    const li = document.createElement('li');
-    // const button = document.createElement('button')
-    // const icon = document.createElement('icon')
-    // button.classList.add('btn-list')
-    // icon.classList.add('fa-solid', 'fa-xmark')
-    // button.appendChild(icon)
-
-    const button = createButton("btn-list")
-
-    // console.log(li)
-    const text = document.createTextNode(inputValue)
-    li.appendChild(text)
-    li.appendChild(button)
-    itemlist.appendChild(li);
-    inputForm.value = '';
-
+    li.appendChild(text);//text lai li vitra halne
+    li.appendChild(btn);//button lai li vitra halne
+    itemList.appendChild(li);//li lai ul vitra halne
+    inputitem.value='';
 }
-
+// button create garam
 function createButton(classes) {
-
-    const button = document.createElement('button')
-    button.className = classes
-    //  <button class="btn-list"></button>
-    const icon = createIcon('fa-solid fa-xmark')
-    button.appendChild(icon)
-    //  <button class="btn-list">
-    // < i class='fa-solid fa-xmark' ></ >
-    // </button>
-    return button
-
+    const button = document.createElement('button');
+    button.className = classes;
+    const icon=createIcon('fa-solid fa-xmark');
+    button.appendChild(icon);//icon lai button vitra haleko
+    return button;
 }
 
-function createIcon(classes) {
-
-    const icon = document.createElement('icon')
-    icon.className = classes
-    return icon
-
-    // < i class='fa-solid fa-xmark' ></ >
-
-
+// Icon create garam
+function createIcon(classes){
+    const icon=document.createElement('icon');
+    icon.className=classes;
+    return icon;
 }
 
-
-
-function clearItems() {
-    itemlist.innerHTML = ''
-
-}
-
-function removeItem(e) {
-
-    const btn = e.target.parentElement
-    // console.log(btn)
-    //yedi class ma btn-list xa vaney maatra delete garney
-    if (btn.classList.contains('btn-list'))
-        btn.parentElement.remove()
-
-
-
-
-}
-
-itemlist.addEventListener("click", removeItem)
-itemForm.addEventListener("submit", addItem)
-clearAll.addEventListener("click", clearItems)
+itemForm.addEventListener('submit',addbtn());
