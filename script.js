@@ -7,7 +7,7 @@ const clear = document.getElementById('clear');
 
 function addbtn(e) {
     e.preventDefault();
-    const inputValue = inputitem.ariaValueMax.trim();//input value liyo
+    const inputValue = inputitem.value.trim();//input value liyo
     if (inputitem === "") {
         alert("please Enter atleast one item")
         return;
@@ -37,4 +37,4 @@ function createIcon(classes){
     return icon;
 }
 
-itemForm.addEventListener('submit',addbtn());
+itemForm.addEventListener('submit',addbtn);
